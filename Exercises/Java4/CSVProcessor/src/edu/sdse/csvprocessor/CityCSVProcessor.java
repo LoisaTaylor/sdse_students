@@ -3,6 +3,12 @@ package edu.sdse.csvprocessor;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.util.Map.Entry;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.List;
+import java.util.ArrayList;
+
 
 public class CityCSVProcessor {
 	
@@ -13,6 +19,7 @@ public class CityCSVProcessor {
 			br.readLine();
 			
 			String line;
+			Map<String, List<CityRecord>> recordsByCity = new HashMap<String, List<CityRecord>>();
 			
 			while ((line = br.readLine()) != null) {
 				// Parse each line
@@ -23,9 +30,46 @@ public class CityCSVProcessor {
 				String city = convertToString(rawValues[2]);
 				int population = convertToInt(rawValues[3]);
 				
+				// NEW - add cityRecord 
 				CityRecord record = new CityRecord(id, year, city, population);
-				System.out.println(record.toString());
+				//System.out.println(record.toString());
+				
+				if (recordsByCity.get(record.city) != null){
+					List<CityRecord> oldRecords = recordsByCity.get(record.city);
+					oldRecords.add(record);
+					recordsByCity.put(record.city, oldRecords);
+				}
+				else {
+					List<CityRecord> allRecords = new ArrayList<CityRecord>();
+					allRecords.add(record);
+					recordsByCity.put(record.city, allRecords);
+				}
 			}
+			
+			for (Entry<String, List<CityRecord>> entry : recordsByCity.entrySet()) { 
+				List<CityRecord> recordsOfCity = entry.getValue();
+	
+				int numberOfEnteries = 0;
+				int minimumYear = 3000;
+				int maximumYear = 0;
+				int averagePopulation = 0;
+				
+				for (CityRecord record : recordsOfCity) {
+					numberOfEnteries ++;
+					averagePopulation += record.population;
+					if (record.year > maximumYear) {
+						maximumYear = record.year;
+					}
+					if (record.year < minimumYear) {
+						minimumYear = record.year;
+					}
+				}
+				
+				averagePopulation = averagePopulation / numberOfEnteries;
+				System.out.format("Average population of %s (%d-%d; %d entries): %d \n", entry.getKey(), minimumYear,maximumYear,numberOfEnteries,averagePopulation);
+			}
+			
+			
 		} catch (Exception e) {
 			System.err.println("An error occurred:");
 			e.printStackTrace();
