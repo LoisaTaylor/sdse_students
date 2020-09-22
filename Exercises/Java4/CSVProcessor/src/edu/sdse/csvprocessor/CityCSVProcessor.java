@@ -23,9 +23,8 @@ public class CityCSVProcessor {
 				String city = convertToString(rawValues[2]);
 				int population = convertToInt(rawValues[3]);
 				
-				System.out.println("id: " + id + ", year: " + year + ", city: " + city + ", population: " + population);
-				
-				//TODO: Extend the program to process entries!
+				CityRecord record = new CityRecord(id, year, city, population);
+				System.out.println(record.toString());
 			}
 		} catch (Exception e) {
 			System.err.println("An error occurred:");
@@ -52,9 +51,9 @@ public class CityCSVProcessor {
 		return rawValue;
 	}
 	
-	public static final void main(String[] args) {
+	public static void main(String[] args) {
 		CityCSVProcessor reader = new CityCSVProcessor();
-		
+		//File dataDirectory = new File("../../../../data/");
 		File dataDirectory = new File("data/");
 		File csvFile = new File(dataDirectory, "Cities.csv");
 		
