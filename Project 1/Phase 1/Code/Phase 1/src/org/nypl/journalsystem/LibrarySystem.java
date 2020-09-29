@@ -88,7 +88,7 @@ public class LibrarySystem {
 			while ((line = br.readLine()) != null) {
 				String[] rawValues = line.split(",");
 				int aid = Integer.parseInt(rawValues[0]);
-				String fullname = (cleanString(rawValues[2]) + " " + cleanString(rawValues[1])).trim();
+				String fullname = (cleanString(rawValues[2]) + " " + cleanString(rawValues[1]));
 				Author author = new Author(aid, fullname);
 				authors.put(aid,author);
 			}
@@ -115,14 +115,14 @@ public class LibrarySystem {
 				String SSN = cleanString(rawValues[3]);
 				String[] indexs = index.split("; ");
 				
-				List<String> authorids = new ArrayList<String>();
-				for(String i:indexs) {
+				List<String> authornames = new ArrayList<String>();
+				for(String i : indexs) {
 					int id = Integer.parseInt(i);
-					authorids.add((authors.get(id).name));
+					authornames.add((authors.get(id).name));
 				}
 				
-				Article article = new Article(arid,title,authorids,SSN);
-				for (Journal j: journals) {
+				Article article = new Article(arid,title,authornames,SSN);
+				for (Journal j : journals) {
 					if (j.ISSN.equals(SSN)){
 						j.addArticle(article);
 					}
