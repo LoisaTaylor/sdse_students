@@ -3,7 +3,7 @@ package eu.portunus.view.control;
 import java.util.List;
 
 import eu.portunus.core.IPasswordRecord;
-import javafx.scene.control.CellValueFactory;
+import javafx.scene.controlchris.CellValueFactory;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;

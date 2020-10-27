@@ -1,7 +1,7 @@
 package eu.portunus.view.control;
 
 import eu.portunus.core.IPasswordRecord;
-import javafx.scene.control.ReadOnlyCellValueFactory;
+import javafx.scene.controlchris.ReadOnlyCellValueFactory;
 
 public class PasswordRecordPasswordCellValueFactory extends ReadOnlyCellValueFactory<IPasswordRecord, String> {
 	@Override

@@ -1,7 +1,7 @@
 package eu.portunus.view.dialog;
 
 import eu.portunus.core.IPasswordGroup;
-import javafx.scene.control.AddEditDialog;
+import javafx.scene.controlchris.AddEditDialog;
 import javafx.scene.control.Control;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;

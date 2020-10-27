@@ -2,7 +2,7 @@ package eu.portunus.view.dialog;
 
 import eu.portunus.view.image.ImageLibrary;
 import javafx.scene.control.Control;
-import javafx.scene.control.OKCancelDialog;
+import javafx.scene.controlchris.OKCancelDialog;
 import javafx.scene.control.PasswordField;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;

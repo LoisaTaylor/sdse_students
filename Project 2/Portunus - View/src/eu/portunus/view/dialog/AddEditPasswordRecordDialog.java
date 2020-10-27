@@ -6,7 +6,7 @@ import java.util.Optional;
 import eu.portunus.core.IPasswordRecord;
 import eu.portunus.core.IPortunusFactory;
 import javafx.geometry.VPos;
-import javafx.scene.control.AddEditDialog;
+import javafx.scene.controlchris.AddEditDialog;
 import javafx.scene.control.Button;
 import javafx.scene.control.Control;
 import javafx.scene.control.Label;

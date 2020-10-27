@@ -1,8 +1,12 @@
-package javafx.scene.control;
+package javafx.scene.controlchris;
 
 import java.util.List;
 
 import javafx.application.Platform;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Control;
+import javafx.scene.control.Dialog;
+import javafx.scene.control.DialogPane;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;

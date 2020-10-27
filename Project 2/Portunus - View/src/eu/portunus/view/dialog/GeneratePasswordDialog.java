@@ -11,7 +11,7 @@ import eu.portunus.view.util.ErrorUtil;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Control;
 import javafx.scene.control.Label;
-import javafx.scene.control.OKCancelDialog;
+import javafx.scene.controlchris.OKCancelDialog;
 import javafx.scene.control.Spinner;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
